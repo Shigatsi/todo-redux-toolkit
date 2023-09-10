@@ -1,18 +1,22 @@
-import { useDispatch } from "react-redux";
-import { toggleItem, deleteItem } from "../../store/todoReaducer";
 import React from "react";
+import { useDispatch } from "react-redux";
+import { toggleItem, deleteItem, editItem } from "../../store/todoReducer.tsx";
 
 import { Input, Button, Space } from "antd";
 import { EditTwoTone, DeleteTwoTone, CheckOutlined } from "@ant-design/icons";
-import { editItem } from "../../store/todoReaducer";
 
-const Item = ({ id, text, done }) => {
-  const [isEdit, setIsEdit] = React.useState(false);
-  const [value, setValue] = React.useState(text);
+interface IItemProps {
+  id: string;
+  text: string;
+  isDone?: boolean;
+}
+const Item = ({ id, text, isDone }: IItemProps): JSX.Element => {
+  const [isEdit, setIsEdit] = React.useState<boolean>(false);
+  const [value, setValue] = React.useState<string>(text);
   const dispatch = useDispatch();
-  const togleEdit = () => setIsEdit(!isEdit);
-  const editHandler = () => {
-    togleEdit();
+  const toggleEdit = (): void => setIsEdit(!isEdit);
+  const editHandler = (): void => {
+    toggleEdit();
   };
 
   return (
@@ -20,7 +24,7 @@ const Item = ({ id, text, done }) => {
       <input
         onChange={() => dispatch(toggleItem({ id: id }))}
         type="checkbox"
-        checked={done}
+        checked={isDone}
       />
       {isEdit ? (
         <Input
@@ -40,9 +44,7 @@ const Item = ({ id, text, done }) => {
           shape="circle"
           onClick={() => {
             dispatch(editItem({ id, text: value }));
-            // dispatch(deleteItem(id));
             editHandler();
-            console.log(id);
           }}
         >
           <CheckOutlined />

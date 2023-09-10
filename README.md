@@ -1,2 +1,4 @@
 # todo-redux-toolkit
-Created with CodeSandbox
+Проект создан для ознакомления с Redux Toolkit.
+
+Технологии: React, Redux Toolkit, TypeScript, AntDesign.
