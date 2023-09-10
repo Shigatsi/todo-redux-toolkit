@@ -3,7 +3,7 @@
 
 Технологии: React, Redux Toolkit, TypeScript, AntDesign.
 
-###Просмотр:
+### Просмотр:
 1. CodeSandbox: https://codesandbox.io/p/github/Shigatsi/todo-redux-toolkit/main
 2. GhPages: -wip-
 
