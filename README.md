@@ -5,7 +5,7 @@
 
 ### Просмотр:
 1. CodeSandbox: https://codesandbox.io/p/github/Shigatsi/todo-redux-toolkit/main
-2. GhPages: -wip-
+2. GhPages: https://shigatsi.github.io/todo-redux-toolkit/
 
 #### для запуска локально в корне проекта выполнить команды:
 1. npm install
